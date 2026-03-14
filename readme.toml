@@ -1,0 +1,7 @@
+course_name = "CS101"
+
+[lecturers]
+
+[[lecturers.reviews]]
+content = "Test"
+author = { name = "test", link = "https://github.com/test" }
