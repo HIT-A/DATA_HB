@@ -1,9 +1,23 @@
-course_name = "CS101"
+course_name = 'CS101'
 
 [lecturers]
 [[lecturers.items]]
-name = "Test Teacher"
+name = 'Test Teacher'
 
 [[lecturers.items.reviews]]
-content = "Initial review"
-author = { name = "test", link = "https://github.com/test" }
+content = 'Initial review'
+
+[lecturers.items.reviews.author]
+link = 'https://github.com/test'
+name = 'test'
+
+[[lecturers.items]]
+name = 'New Teacher'
+
+[[lecturers.items.reviews]]
+content = 'Great course! Added via pr-server.'
+
+[lecturers.items.reviews.author]
+date = ''
+link = 'https://github.com/test'
+name = 'test'
