@@ -7,9 +7,7 @@ description = """\nAuto bootstrap by pr-server for missing course target.\n"""
 title = "课程信息"
 [[sections.items]]
 content = """
-
-初始化课程条目。
-
+测试改动
 """
 [[sections]]
 title = "Info"
