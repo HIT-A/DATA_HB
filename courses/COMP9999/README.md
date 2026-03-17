@@ -10,6 +10,10 @@ Auto bootstrap by pr-server for missing course target.
 
 测试改动
 
+## 关于考试
+
+考试很难
+
 ## Info
 <!-- TOML-SECTION: title="Info" -->
 
