@@ -23,15 +23,25 @@ jobs:
         with:
           github-token: ${{ secrets.PAT }}
           script: |
-            console.log("Token exists:", !!process.env.INPUT_GITHUB_TOKEN);
-            if (!process.env.INPUT_GITHUB_TOKEN) {
-              core.setFailed("PAT secret was not passed into github-token");
-              return;
-            }
+            const owner = 'HIT-A';
+            const repo = 'repos-management';
+            const workflow_id = 'course_harbin.yml';
 
-            await github.rest.actions.createWorkflowDispatch({
-              owner: 'HIT-A',
-              repo: 'repos-management',
-              workflow_id: 'course_harbin.yml',
-              ref: 'main'
-            })
+            core.info(`Actor: ${context.actor}`);
+            core.info(`Attempt dispatch target: ${owner}/${repo}/${workflow_id}`);
+
+            try {
+              // Real permission probe with the provided github-token.
+              const wf = await github.rest.actions.getWorkflow({ owner, repo, workflow_id });
+              core.info(`Workflow probe OK: id=${wf.data.id}, state=${wf.data.state}`);
+
+              await github.rest.actions.createWorkflowDispatch({
+                owner,
+                repo,
+                workflow_id,
+                ref: 'main'
+              });
+              core.info('Dispatch sent successfully.');
+            } catch (e) {
+              core.setFailed(`Dispatch failed: status=${e.status || 'unknown'} message=${e.message}`);
+            }
