@@ -8,7 +8,7 @@ Auto bootstrap by pr-server for missing course target.
 
 <!-- TOML-ITEM: id="item-课程信息-1" -->
 
-初始化课程条目。
+测试改动
 
 ## Info
 <!-- TOML-SECTION: title="Info" -->
