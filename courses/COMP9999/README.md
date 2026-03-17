@@ -11,6 +11,9 @@ Auto bootstrap by pr-server for missing course target.
 测试改动
 
 ## 关于考试
+<!-- TOML-SECTION: title="关于考试" -->
+
+<!-- TOML-ITEM: id="item-关于考试-1" -->
 
 考试很难
 
